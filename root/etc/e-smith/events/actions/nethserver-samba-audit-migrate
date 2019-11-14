@@ -22,4 +22,6 @@
 
 # Make sure 'smbd' user can access new 'smbaudit' db
 
-mysql -e "USE mysql; GRANT ALL ON smbaudit.* TO 'smbd'@'localhost'; REPLACE INTO user (host, user, password) VALUES ('localhost', 'smbd', password('smbpass')); FLUSH PRIVILEGES;"
+pass=$(cat /var/lib/nethserver/secrets/smbd)
+
+mysql -e "USE mysql; GRANT ALL ON smbaudit.* TO 'smbd'@'localhost'; REPLACE INTO user (host, user, password) VALUES ('localhost', 'smbd', password('$pass')); FLUSH PRIVILEGES;"
