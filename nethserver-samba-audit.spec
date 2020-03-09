@@ -24,6 +24,7 @@ rm -rf %{buildroot}
 (cd root; find . -depth -print | cpio -dump %{buildroot})
 %{genfilelist} \
     --file /var/log/smbaudit.log 'attr(0640,root,root)' \
+    --file /etc/sudoers.d/samba-audit 'attr(0440,root,root)' \
 %{buildroot} > %{name}-%{version}-filelist
 
 
