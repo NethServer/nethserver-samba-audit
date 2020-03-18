@@ -1,6 +1,6 @@
 Summary: Enable audit on samba shared 
 Name: nethserver-samba-audit
-Version: 1.3.0
+Version: 1.3.1
 Release: 1%{?dist}
 License: GPLv2
 Source: %{name}-%{version}.tar.gz
@@ -44,6 +44,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Mar 18 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.3.1-1
+- Bad sudoers permission - Bug NethServer/dev#6081
+
 * Fri Nov 15 2019 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.3.0-1
 - SambaAudit cannot be enabled on migrated ibays - Bug NethServer/dev#5899
 
