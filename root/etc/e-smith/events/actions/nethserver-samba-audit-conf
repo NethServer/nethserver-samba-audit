@@ -40,4 +40,4 @@ if [[ $res == '0' ]]; then
 fi
 
 # Fix issue NethServer/dev#6572
-/usr/bin/mysql --defaults-file=/root/.my.cnf smbaudit -e "alter table audit modify column arg varchar(8702);"
+/usr/bin/mysql --defaults-file=/root/.my.cnf smbaudit -e "alter table audit modify column arg varchar(8703);"
