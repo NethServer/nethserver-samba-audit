@@ -1,6 +1,6 @@
 Summary: Enable audit on samba shared 
 Name: nethserver-samba-audit
-Version: 1.3.1
+Version: 1.3.2
 Release: 1%{?dist}
 License: GPLv2
 Source: %{name}-%{version}.tar.gz
@@ -44,6 +44,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Sep 17 2021 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.3.2-1
+- Sambaudit: truncated file name - Bug NethServer/dev#6572
+
 * Wed Mar 18 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.3.1-1
 - Bad sudoers permission - Bug NethServer/dev#6081
 
