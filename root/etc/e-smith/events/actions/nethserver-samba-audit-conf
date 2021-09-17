@@ -38,3 +38,6 @@ res=`/usr/bin/mysql --defaults-file=/root/.my.cnf -e "select count(*) from infor
 if [[ $res == '0' ]]; then
     /usr/bin/mysql --defaults-file=/root/.my.cnf < /usr/share/smbaudit/sql/smbaudit.sql
 fi
+
+# Fix issue NethServer/dev#6572
+/usr/bin/mysql --defaults-file=/root/.my.cnf smbaudit -e "alter table audit modify column arg varchar(8702);"
